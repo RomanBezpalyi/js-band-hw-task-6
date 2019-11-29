@@ -12,7 +12,6 @@ const Header = () => (
       />
     </Link>
     <h1>MyToDo</h1>
-    <h3>qw</h3>
   </header>
 );
 
