@@ -1,9 +1,9 @@
 import React, { Component, createRef } from 'react';
-import shortid from 'shortid';
 import Form from '../Form/Form';
 import TodoList from '../TodoList/TodoList';
 import Modal from '../Modal/Modal';
 import filterTodos from '../../helpers/filterTodos';
+import putTodoToEditMode from '../../helpers/putTodoToEditMode';
 
 export default class Dashboard extends Component {
   backdropRef = createRef();
@@ -18,45 +18,39 @@ export default class Dashboard extends Component {
           description: 'qwe',
           priority: 'High',
           isDone: true,
-          id: shortid(),
+          id: 'shortid(',
         },
         {
           title: 'qwe',
           description: 'qwe',
           priority: 'High',
           isDone: true,
-          id: shortid(),
+          id: 'shortid();',
         },
         {
           title: 'qwec',
           description: 'qwe',
           priority: 'Low',
           isDone: true,
-          id: shortid(),
+          id: 'shortijkd()',
         },
         {
           title: 'qe',
           description: 'qwe',
           priority: 'Low',
           isDone: false,
-          id: shortid(),
+          id: 'short',
         },
         {
           title: 'qwert',
           description: 'qwe',
           priority: 'High',
           isDone: false,
-          id: shortid(),
+          id: 'sdfhortid()',
         },
       ],
       isModalOpen: false,
       selectedTodoId: null,
-      modalForm: {
-        title: '',
-        description: '',
-        priority: 'Low',
-        isDone: false,
-      },
       searchForm: {
         title: '',
         priority: 'All',
@@ -89,11 +83,9 @@ export default class Dashboard extends Component {
     }));
   };
 
-  handleEditClick = todo => {
-    const { title, description, priority, isDone } = todo;
+  handleEditClick = () => {
     this.setState({
       isModalOpen: true,
-      modalForm: { title, description, priority, isDone },
     });
   };
 
@@ -110,7 +102,6 @@ export default class Dashboard extends Component {
 
   handleCloseModal = () => {
     this.setState({ isModalOpen: false });
-    this.resetCreateForm();
   };
 
   handleKeyPress = e => {
@@ -126,47 +117,21 @@ export default class Dashboard extends Component {
     this.handleCloseModal();
   };
 
-  handleCreateInputChange = ({ target: { value, name } }) =>
-    this.setState(state => ({
-      modalForm: { ...state.modalForm, [name]: value },
-    }));
-
-  handleSubmit = e => {
-    e.preventDefault();
-    const { selectedTodoId } = this.state;
-    const { title, description, priority, isDone } = this.state.modalForm;
-    const todo = { title, description, priority, isDone };
-    if (selectedTodoId) {
-      todo.id = selectedTodoId;
-      this.handleUpdateTodo(selectedTodoId, todo);
-      this.setState({ selectedTodoId: null });
-    } else {
-      todo.id = shortid();
-      this.setState(state => ({ todos: [...state.todos, todo] }));
-    }
-    this.handleCloseModal();
-  };
+  handleAddTodo = todo =>
+    this.setState(state => ({ todos: [...state.todos, todo] }));
 
   handleUpdateTodo = (id, todo) => {
     this.setState(state => ({
       todos: [...state.todos.filter(task => task.id !== id), todo],
+      selectedTodoId: null,
     }));
   };
 
-  resetCreateForm = () =>
-    this.setState({
-      modalForm: { title: '', description: '', priority: 'Low', isDone: false },
-    });
-
   render() {
-    const { isModalOpen, modalForm, todos, searchForm } = this.state;
-    const {
-      title: createTitle,
-      description: createDescription,
-      priority: createPriority,
-    } = modalForm;
+    const { isModalOpen, todos, searchForm, selectedTodoId } = this.state;
     const { title, priority, progress } = searchForm;
     const todosToRender = filterTodos(todos, title, priority, progress);
+    const todoInEditMode = putTodoToEditMode(todos, selectedTodoId);
 
     return (
       <main>
@@ -192,12 +157,10 @@ export default class Dashboard extends Component {
             role="button"
           >
             <Modal
-              handleChange={this.handleCreateInputChange}
-              title={createTitle}
-              description={createDescription}
-              priority={createPriority}
               handleClose={this.handleCloseModal}
-              handleSubmit={this.handleSubmit}
+              handleAdd={this.handleAddTodo}
+              handleUpdate={this.handleUpdateTodo}
+              todoInEditMode={todoInEditMode}
             />
           </div>
         )}

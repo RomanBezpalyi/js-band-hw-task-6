@@ -6,7 +6,7 @@ import TodosPage from '../pages/TodosPage';
 function App() {
   return (
     <Switch>
-      <Route path="/todos" component={TodosPage} />
+      <Route exact path="" component={TodosPage} />
       {/* <Route path="*" component={NotFoundPage} /> */}
       <Redirect to="/todos" />
     </Switch>
