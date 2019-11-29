@@ -32,6 +32,8 @@
       "extensions": [".js", ".jsx"]
     }],
     "jsx-a11y/no-onchange": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true
     }],
@@ -43,7 +45,7 @@
       }
     ],
     "react/static-property-placement": [1, "static public field"],
-    "react/state-in-constructor": [1, "never"],
+    "react/state-in-constructor": [0, "never"],
     "react/sort-comp": [
       2,
       {
