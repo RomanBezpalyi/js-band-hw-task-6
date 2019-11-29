@@ -1,0 +1,2 @@
+(this["webpackJsonpjs-band-hw-task-6"]=this["webpackJsonpjs-band-hw-task-6"]||[]).push([[0],{3:function(e,n,t){e.exports=t(8)},8:function(e,n,t){"use strict";t.r(n);var a=t(0),s=t.n(a),r=t(2);var c=function(){return s.a.createElement("h1",{className:"App"},"Learn React")};t.n(r).a.render(s.a.createElement(c,null),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.6461bec3.chunk.js.map
