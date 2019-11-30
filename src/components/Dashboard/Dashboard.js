@@ -12,43 +12,7 @@ export default class Dashboard extends Component {
     super(props);
 
     this.state = {
-      todos: [
-        {
-          title: 'qwe',
-          description: 'qwe',
-          priority: 'High',
-          isDone: true,
-          id: 'shortid(',
-        },
-        {
-          title: 'qwe',
-          description: 'qwe',
-          priority: 'High',
-          isDone: true,
-          id: 'shortid();',
-        },
-        {
-          title: 'qwec',
-          description: 'qwe',
-          priority: 'Low',
-          isDone: true,
-          id: 'shortijkd()',
-        },
-        {
-          title: 'qe',
-          description: 'qwe',
-          priority: 'Low',
-          isDone: false,
-          id: 'short',
-        },
-        {
-          title: 'qwert',
-          description: 'qwe',
-          priority: 'High',
-          isDone: false,
-          id: 'sdfhortid()',
-        },
-      ],
+      todos: [],
       isModalOpen: false,
       selectedTodoId: null,
       searchForm: {
@@ -76,13 +40,6 @@ export default class Dashboard extends Component {
 
   // TODO LIST
 
-  handleUpdateClick = todo => {
-    const { id } = todo;
-    this.setState(state => ({
-      todos: [...state.todos.filter(task => task.id !== id), todo],
-    }));
-  };
-
   handleEditClick = () => {
     this.setState({
       isModalOpen: true,
@@ -94,14 +51,16 @@ export default class Dashboard extends Component {
       todos: [...state.todos.filter(todo => todo.id !== id)],
     }));
 
-  setSelectedId = id => this.setState({ selectedTodoId: id });
+  setSelectedId = (id = null) => this.setState({ selectedTodoId: id });
 
   // MODAL
 
   handleOpenModal = () => this.setState({ isModalOpen: true });
 
   handleCloseModal = () => {
+    const { selectedTodoId } = this.state;
     this.setState({ isModalOpen: false });
+    if (selectedTodoId) this.setSelectedId();
   };
 
   handleKeyPress = e => {
@@ -118,11 +77,11 @@ export default class Dashboard extends Component {
   };
 
   handleAddTodo = todo =>
-    this.setState(state => ({ todos: [...state.todos, todo] }));
+    this.setState(state => ({ todos: [todo, ...state.todos] }));
 
   handleUpdateTodo = (id, todo) => {
     this.setState(state => ({
-      todos: [...state.todos.filter(task => task.id !== id), todo],
+      todos: [todo, ...state.todos.filter(task => task.id !== id)],
       selectedTodoId: null,
     }));
   };
@@ -134,7 +93,7 @@ export default class Dashboard extends Component {
     const todoInEditMode = putTodoToEditMode(todos, selectedTodoId);
 
     return (
-      <main>
+      <main className="main-content">
         <Form
           title={title}
           priority={priority}
@@ -144,14 +103,14 @@ export default class Dashboard extends Component {
         />
         <TodoList
           todos={todosToRender}
-          handleUpdateClick={this.handleUpdateClick}
+          handleUpdateClick={this.handleUpdateTodo}
           handleEditClick={this.handleEditClick}
           handleDeleteClick={this.handleDeleteClick}
           setSelectedId={this.setSelectedId}
         />
         {isModalOpen && (
           <div
-            className="backdrop"
+            className="backdrop container"
             ref={this.backdropRef}
             onClick={this.handleBackdropClick}
             role="button"

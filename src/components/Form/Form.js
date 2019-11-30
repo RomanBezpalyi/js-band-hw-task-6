@@ -4,11 +4,21 @@ import ProgressSelect from './ProgressSelect/ProgressSelect';
 import PrioritySelect from './PrioritySelect/PrioritySelect';
 
 const Form = ({ title, priority, progress, handleOpenModal, handleChange }) => (
-  <form>
-    <input name="title" value={title} type="text" onChange={handleChange} />
+  <form className="form-inline container form">
+    <input
+      className="form-control col-xs-6 col-md-3"
+      name="title"
+      value={title}
+      type="text"
+      onChange={handleChange}
+    />
     <ProgressSelect value={progress} handleChange={handleChange} />
     <PrioritySelect value={priority} handleChange={handleChange} />
-    <button type="button" onClick={handleOpenModal}>
+    <button
+      className="btn btn-primary col-xs-6 col-sm-4 col-md-1"
+      type="button"
+      onClick={handleOpenModal}
+    >
       Create
     </button>
   </form>

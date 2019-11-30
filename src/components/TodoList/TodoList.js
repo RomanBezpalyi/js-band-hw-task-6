@@ -9,9 +9,9 @@ const TodoList = ({
   handleDeleteClick,
   setSelectedId,
 }) => (
-  <ul>
+  <ul className="container list-unstyled">
     {todos.map(todo => (
-      <li key={todo.id}>
+      <li key={todo.id} className="col-xs-12 col-sm-6 col-md-3">
         <TodoItem
           todo={todo}
           handleUpdateClick={handleUpdateClick}

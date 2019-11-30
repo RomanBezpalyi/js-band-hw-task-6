@@ -13,7 +13,11 @@ export default class Modal extends Component {
       description: PropTypes.string.isRequired,
       priority: PropTypes.string.isRequired,
       isDone: PropTypes.bool.isRequired,
-    }).isRequired,
+    }),
+  };
+
+  static defaultProps = {
+    todoInEditMode: null,
   };
 
   constructor(props) {
@@ -68,13 +72,17 @@ export default class Modal extends Component {
     const { title, description, priority } = this.state;
     const { handleClose } = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        className="thumbnail col-md-4 cl-xs-10 modal-form"
+        onSubmit={this.handleSubmit}
+      >
         <label htmlFor="textLabel">
           Title:
           <input
             id="textLabel"
             name="title"
             value={title}
+            className="form-control"
             type="text"
             placeholder="Title"
             onChange={this.handleChange}
@@ -87,6 +95,7 @@ export default class Modal extends Component {
             id="textaresLabel"
             value={description}
             name="description"
+            className="form-control textarea"
             placeholder="Description"
             onChange={this.handleChange}
           />
@@ -95,6 +104,7 @@ export default class Modal extends Component {
           Priority:
           <select
             id="selectLabel"
+            className="form-control"
             value={priority}
             onChange={this.handleChange}
             name="priority"
@@ -104,9 +114,15 @@ export default class Modal extends Component {
             <option value="Low">Low</option>
           </select>
         </label>
-        <div>
-          <button type="submit">Save</button>
-          <button type="button" onClick={handleClose}>
+        <div className="row modal-form__wrapper">
+          <button type="submit" className="btn btn-primary col-md-3">
+            Save
+          </button>
+          <button
+            type="button"
+            className="btn btn-default col-md-3"
+            onClick={handleClose}
+          >
             Cancel
           </button>
         </div>

@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ItemButton = ({ text, handleClick }) => (
-  <button type="button" onClick={handleClick}>
+const ItemButton = ({ text, handleClick, classNames }) => (
+  <button
+    type="button"
+    onClick={handleClick}
+    className={`dropdown-btn ${classNames}`}
+  >
     {text}
   </button>
 );
@@ -10,6 +14,7 @@ const ItemButton = ({ text, handleClick }) => (
 ItemButton.propTypes = {
   text: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  classNames: PropTypes.string.isRequired,
 };
 
 export default ItemButton;

@@ -1,0 +1,35 @@
+.list-item,
+.list-item--done {
+  //   height: 180px;
+  padding: 14px;
+}
+
+.list-item--done {
+  position: relative;
+  background-color: rgb(211, 211, 211);
+}
+
+.list-item--done::after {
+  position: absolute;
+  content: url('../../../assets/icons/iconmonstr-check-mark-17.svg');
+  top: 0;
+  right: 0;
+  transform: translate(12%, -16%);
+}
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-list {
+    min-width: 90px;
+}
+
+.dropdown-btn {
+    width: 100%;
+}
+
+.label {
+  padding-top: 12px;
+}

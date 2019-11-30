@@ -17,7 +17,7 @@ export default class ButtonDropdown extends Component {
   handleDone = () => {
     const { todo, handleUpdateClick } = this.props;
     const doneTodo = { ...todo, isDone: !todo.isDone };
-    handleUpdateClick(doneTodo);
+    handleUpdateClick(doneTodo.id, doneTodo);
   };
 
   handleEdit = () => {
@@ -34,16 +34,43 @@ export default class ButtonDropdown extends Component {
   render() {
     const { todo } = this.props;
     return (
-      <div>
-        <span>...</span>
-        <div>
-          <ItemButton
-            handleClick={this.handleDone}
-            text={todo.isDone ? 'Open' : 'Done'}
-          />
-          <ItemButton handleClick={this.handleEdit} text="Edit" />
-          <ItemButton handleClick={this.handleDelete} text="Delete" />
-        </div>
+      <div className="dropdown">
+        <button
+          className="btn btn-primary dropdown-toggle"
+          id="dropdownMenu1"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="true"
+          type="button"
+        >
+          ...
+        </button>
+        <ul
+          className="dropdown-menu dropdown-list"
+          aria-labelledby="dropdownMenu1"
+        >
+          <li>
+            <ItemButton
+              handleClick={this.handleDone}
+              text={todo.isDone ? 'Open' : 'Done'}
+              classNames="btn btn-success"
+            />
+          </li>
+          <li>
+            <ItemButton
+              handleClick={this.handleEdit}
+              text="Edit"
+              classNames="btn btn-warning"
+            />
+          </li>
+          <li>
+            <ItemButton
+              handleClick={this.handleDelete}
+              text="Delete"
+              classNames="btn btn-danger"
+            />
+          </li>
+        </ul>
       </div>
     );
   }
