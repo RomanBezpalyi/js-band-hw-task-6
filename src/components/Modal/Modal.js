@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import shortid from 'shortid';
 
 export default class Modal extends Component {
@@ -50,6 +51,10 @@ export default class Modal extends Component {
     const { title, description, priority, isDone } = this.state;
     const { handleAdd, handleUpdate, handleClose, todoInEditMode } = this.props;
     const todo = { title, description, priority, isDone };
+    if (!title || !description) {
+      toast.error('Fill all the fields.');
+      return;
+    }
     if (todoInEditMode) {
       todo.id = todoInEditMode.id;
       handleUpdate(todoInEditMode.id, todo);

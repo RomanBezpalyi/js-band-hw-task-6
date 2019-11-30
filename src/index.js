@@ -1,4 +1,5 @@
 import './styles/main.scss';
+import './configs/toastify.config';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
