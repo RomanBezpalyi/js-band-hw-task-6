@@ -60,34 +60,46 @@ customize it when you are ready for it.
 │      └── check-mark.svg
 ├── components
 │   ├── App
-│   │   └── App.js
+│   │   │── App.jsx
+│   │   └── index.js
 │   ├── ButtonDropdown
-│   │   └── ButtonDropdown.js
+│   │   │── ButtonDropdown.jsx
+│   │   └── index.js
 │   ├── Dashboard
-│   │   └── Dashboard.js
+│   │   │── Dashboard.js
+│   │   └── index.js
 │   ├── Footer
-│   │   └── Footer.js
+│   │   │── Footer.js
+│   │   └── index.js
 │   ├── Form
 │   │   ├── PrioritySelect
+│   │   │   │── index.js
 │   │   │   └── PrioritySelect.js
 │   │   ├── ProgressSelect
+│   │   │   │── index.js
 │   │   │   └── ProgressSelect.js
-│   │   └── Form.js
+│   │   │── Form.js
+│   │   └── index.js
 │   ├── Header
-│   │   └── Header.js
+│   │   │── Header.js
+│   │   └── index.js
 │   ├── ItemButton
+│   │   │── index.js
 │   │   └── ItemButton.js
 │   ├── Modal
+│   │   │── index.js
 │   │   └── Modal.js
 │   ├── pages
 │   │   ├── NotFoundPage.js
 │   │   └── TodosPage.js
 │   ├──TodoItem
+│   │   │── index.js
 │   │   └── TodoItem.js
 │   └── TodoList
+│       │── index.js
 │       └── TodoList.js
 ├── configs
-│   └── toastify.config.js
+│   └── index.js
 ├── helpers
 │   ├── filterTodos.js
 │   └── putTodoToEditMode.js
