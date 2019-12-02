@@ -41,8 +41,14 @@ export default class Dashboard extends Component {
   // TODO LIST
 
   handleUpdateTodo = (id, todo) => {
+    const { todos } = this.state;
+    const index = todos.indexOf(todos.find(task => task.id === id));
     this.setState(state => ({
-      todos: [todo, ...state.todos.filter(task => task.id !== id)],
+      todos: [
+        ...state.todos.slice(0, index),
+        todo,
+        ...state.todos.slice(index + 1, todos.length),
+      ],
       selectedTodoId: null,
     }));
   };
