@@ -60,34 +60,46 @@ customize it when you are ready for it.
 │      └── check-mark.svg
 ├── components
 │   ├── App
-│   │   └── App.js
+│   │   │── App.jsx
+│   │   └── index.js
 │   ├── ButtonDropdown
-│   │   └── ButtonDropdown.js
+│   │   │── ButtonDropdown.jsx
+│   │   └── index.js
 │   ├── Dashboard
-│   │   └── Dashboard.js
+│   │   │── Dashboard.jsx
+│   │   └── index.js
 │   ├── Footer
-│   │   └── Footer.js
+│   │   │── Footer.jsx
+│   │   └── index.js
 │   ├── Form
 │   │   ├── PrioritySelect
-│   │   │   └── PrioritySelect.js
+│   │   │   │── index.js
+│   │   │   └── PrioritySelect.jsx
 │   │   ├── ProgressSelect
-│   │   │   └── ProgressSelect.js
-│   │   └── Form.js
+│   │   │   │── index.js
+│   │   │   └── ProgressSelect.jsx
+│   │   │── Form.jsx
+│   │   └── index.js
 │   ├── Header
-│   │   └── Header.js
+│   │   │── Header.jsx
+│   │   └── index.js
 │   ├── ItemButton
-│   │   └── ItemButton.js
+│   │   │── index.js
+│   │   └── ItemButton.jsx
 │   ├── Modal
-│   │   └── Modal.js
+│   │   │── index.js
+│   │   └── Modal.jsx
 │   ├── pages
-│   │   ├── NotFoundPage.js
-│   │   └── TodosPage.js
+│   │   ├── NotFoundPage.jsx
+│   │   └── TodosPage.jsx
 │   ├──TodoItem
-│   │   └── TodoItem.js
+│   │   │── index.js
+│   │   └── TodoItem.jsx
 │   └── TodoList
-│       └── TodoList.js
+│       │── index.js
+│       └── TodoList.jsx
 ├── configs
-│   └── toastify.config.js
+│   └── index.js
 ├── helpers
 │   ├── filterTodos.js
 │   └── putTodoToEditMode.js
