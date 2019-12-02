@@ -1,8 +1,10 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer>
-    <h2>Roman Bezpalyi</h2>
+  <footer className="bg-primary footer">
+    <div className="container">
+      <h2 className="h3">Roman Bezpalyi</h2>
+    </div>
   </footer>
 );
 

@@ -1,11 +1,13 @@
+import './styles/main.scss';
+import './configs/toastify.config';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import App from './components/App/App';
 
 ReactDOM.render(
-  <BrowserRouter basename="/todos">
+  <HashRouter basename="/">
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );

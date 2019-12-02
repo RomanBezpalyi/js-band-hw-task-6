@@ -1,0 +1,12 @@
+@import './base/normalize.scss';
+@import './components/header/header.scss';
+@import './components/dashboard/dashboard.scss';
+@import './components/form/form.scss';
+@import './components/list-item/list-item.scss';
+@import './components/modal/modal.scss';
+@import './components/footer/footer.scss';
+
+
+* {
+  box-sizing: border-box;
+}
