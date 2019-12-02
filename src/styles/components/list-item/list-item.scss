@@ -1,6 +1,5 @@
 .list-item,
 .list-item--done {
-  //   height: 180px;
   padding: 14px;
 }
 
@@ -11,10 +10,9 @@
 
 .list-item--done::after {
   position: absolute;
-  content: url('../../../assets/icons/iconmonstr-check-mark-17.svg');
+  content: url('../../../assets/icons/check-mark.svg');
   top: 0;
   right: 0;
-  transform: translate(12%, -16%);
 }
 
 .item-wrapper {
@@ -23,11 +21,11 @@
 }
 
 .dropdown-list {
-    min-width: 90px;
+  min-width: 90px;
 }
 
 .dropdown-btn {
-    width: 100%;
+  width: 100%;
 }
 
 .label {

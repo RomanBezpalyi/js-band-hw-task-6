@@ -40,13 +40,14 @@ export default class Dashboard extends Component {
 
   // TODO LIST
 
-  handleEditClick = () => {
-    this.setState({
-      isModalOpen: true,
-    });
+  handleUpdateTodo = (id, todo) => {
+    this.setState(state => ({
+      todos: [todo, ...state.todos.filter(task => task.id !== id)],
+      selectedTodoId: null,
+    }));
   };
 
-  handleDeleteClick = id =>
+  handleDeleteTodo = id =>
     this.setState(state => ({
       todos: [...state.todos.filter(todo => todo.id !== id)],
     }));
@@ -79,13 +80,6 @@ export default class Dashboard extends Component {
   handleAddTodo = todo =>
     this.setState(state => ({ todos: [todo, ...state.todos] }));
 
-  handleUpdateTodo = (id, todo) => {
-    this.setState(state => ({
-      todos: [todo, ...state.todos.filter(task => task.id !== id)],
-      selectedTodoId: null,
-    }));
-  };
-
   render() {
     const { isModalOpen, todos, searchForm, selectedTodoId } = this.state;
     const { title, priority, progress } = searchForm;
@@ -104,8 +98,8 @@ export default class Dashboard extends Component {
         <TodoList
           todos={todosToRender}
           handleUpdateClick={this.handleUpdateTodo}
-          handleEditClick={this.handleEditClick}
-          handleDeleteClick={this.handleDeleteClick}
+          handleEditClick={this.handleOpenModal}
+          handleDeleteClick={this.handleDeleteTodo}
           setSelectedId={this.setSelectedId}
         />
         {isModalOpen && (

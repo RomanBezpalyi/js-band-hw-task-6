@@ -41,7 +41,10 @@ export default class Modal extends Component {
   }
 
   handleChange = ({ target: { value, name } }) => {
-    if ((name === 'title' || name === 'description') && value.length > 20)
+    if (
+      (name === 'title' && value.length > 16) ||
+      (name === 'description' && value.length > 25)
+    )
       return;
     this.setState({ [name]: value });
   };
@@ -97,7 +100,7 @@ export default class Modal extends Component {
           Description:
           <textarea
             rows="5"
-            id="textaresLabel"
+            id="textareaLabel"
             value={description}
             name="description"
             className="form-control textarea"

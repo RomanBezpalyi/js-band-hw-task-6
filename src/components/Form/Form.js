@@ -11,6 +11,7 @@ const Form = ({ title, priority, progress, handleOpenModal, handleChange }) => (
       value={title}
       type="text"
       onChange={handleChange}
+      placeholder="Search by title"
     />
     <ProgressSelect value={progress} handleChange={handleChange} />
     <PrioritySelect value={priority} handleChange={handleChange} />
