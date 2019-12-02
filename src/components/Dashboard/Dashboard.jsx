@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
-import Form from '../Form/Form';
-import TodoList from '../TodoList/TodoList';
-import Modal from '../Modal/Modal';
+import Form from '../Form';
+import TodoList from '../TodoList';
+import Modal from '../Modal';
 import filterTodos from '../../helpers/filterTodos';
 import putTodoToEditMode from '../../helpers/putTodoToEditMode';
 

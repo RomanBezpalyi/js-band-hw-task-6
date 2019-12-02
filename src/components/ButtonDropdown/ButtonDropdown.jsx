@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ItemButton from '../ItemButton/ItemButton';
+import ItemButton from '../ItemButton';
 
 export default class ButtonDropdown extends Component {
   static propTypes = {

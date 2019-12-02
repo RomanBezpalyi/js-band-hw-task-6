@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProgressSelect from './ProgressSelect/ProgressSelect';
-import PrioritySelect from './PrioritySelect/PrioritySelect';
+import ProgressSelect from './ProgressSelect';
+import PrioritySelect from './PrioritySelect';
 
 const Form = ({ title, priority, progress, handleOpenModal, handleChange }) => (
   <form className="form-inline container form">
