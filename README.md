@@ -66,38 +66,38 @@ customize it when you are ready for it.
 │   │   │── ButtonDropdown.jsx
 │   │   └── index.js
 │   ├── Dashboard
-│   │   │── Dashboard.js
+│   │   │── Dashboard.jsx
 │   │   └── index.js
 │   ├── Footer
-│   │   │── Footer.js
+│   │   │── Footer.jsx
 │   │   └── index.js
 │   ├── Form
 │   │   ├── PrioritySelect
 │   │   │   │── index.js
-│   │   │   └── PrioritySelect.js
+│   │   │   └── PrioritySelect.jsx
 │   │   ├── ProgressSelect
 │   │   │   │── index.js
-│   │   │   └── ProgressSelect.js
-│   │   │── Form.js
+│   │   │   └── ProgressSelect.jsx
+│   │   │── Form.jsx
 │   │   └── index.js
 │   ├── Header
-│   │   │── Header.js
+│   │   │── Header.jsx
 │   │   └── index.js
 │   ├── ItemButton
 │   │   │── index.js
-│   │   └── ItemButton.js
+│   │   └── ItemButton.jsx
 │   ├── Modal
 │   │   │── index.js
-│   │   └── Modal.js
+│   │   └── Modal.jsx
 │   ├── pages
-│   │   ├── NotFoundPage.js
-│   │   └── TodosPage.js
+│   │   ├── NotFoundPage.jsx
+│   │   └── TodosPage.jsx
 │   ├──TodoItem
 │   │   │── index.js
-│   │   └── TodoItem.js
+│   │   └── TodoItem.jsx
 │   └── TodoList
 │       │── index.js
-│       └── TodoList.js
+│       └── TodoList.jsx
 ├── configs
 │   └── index.js
 ├── helpers
