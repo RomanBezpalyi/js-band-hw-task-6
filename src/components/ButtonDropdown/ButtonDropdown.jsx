@@ -22,7 +22,7 @@ export default class ButtonDropdown extends Component {
 
   handleEdit = () => {
     const { todo, handleEditClick, setSelectedId } = this.props;
-    handleEditClick(todo);
+    handleEditClick();
     setSelectedId(todo.id);
   };
 
